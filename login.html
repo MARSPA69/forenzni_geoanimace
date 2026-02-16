@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neveřejná část | Forenzní geoanimace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="logo">
+                <span class="logo-mark">FG</span>
+                <div class="logo-text">
+                    <strong>Forenzní geoanimace</strong>
+                    <small>Neveřejná část</small>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Hlavní web</a>
+                <a class="cta" href="#access">Ověření</a>
+            </nav>
+        </header>
+
+        <main id="access">
+            <div class="login-shell">
+                <p class="eyebrow">Interní přístup</p>
+                <h2>Vstup chráněný heslem</h2>
+                <p class="muted">
+                    Po zadání hesla se zobrazí odkaz ke stažení archivu <strong>SSHR_Bohuslavice.zip</strong>.
+                    Archiv obsahuje animační aplikaci areálu SSHR Bohuslavice k lokálnímu spuštění.
+                </p>
+
+                <form id="password-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="password">Heslo</label>
+                        <input type="password" id="password" name="password" placeholder="Zadejte heslo" required>
+                        <p class="helper">Heslo získáte od správce projektu.</p>
+                    </div>
+                    <button type="submit" class="button primary">Ověřit</button>
+                </form>
+
+                <div id="success-box" class="success-box hidden">
+                    <h3>Přístup povolen</h3>
+                    <p class="muted">
+                        Stáhněte archiv aplikace a rozbalte jej lokálně. Prohlížeč doporučeno spouštět v prostředí s podporou
+                        české diakritiky (UTF-8).
+                    </p>
+                    <p><a class="button ghost" href="downloads/SSHR_Bohuslavice.zip" download>Stáhnout SSHR_Bohuslavice.zip</a></p>
+                    <p class="helper">Pokud se stahování nespustí, použijte pravé tlačítko myši a Uložit odkaz jako…</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Build artefacts / platform
+.vercel
+node_modules
+
+# OS noise
+.DS_Store
+Thumbs.db

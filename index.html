@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forenzní geoanimace | OPSEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="logo">
+                <span class="logo-mark">FG</span>
+                <div class="logo-text">
+                    <strong>Forenzní geoanimace</strong>
+                    <small>OPSEC | pohyb osob, robotů a vozidel</small>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#metodika">Metodika</a>
+                <a href="#manual">Uživatelský manuál</a>
+                <a href="#strategie">Obchodní strategie</a>
+                <a href="#hodnoceni">Hodnoticí zpráva</a>
+                <a class="cta" href="login.html">Neveřejná část</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="eyebrow">Projekt VK01030216 · OPSEC MV ČR 2021–2026</p>
+                    <h1>Forenzní geoanimace pohybu osob a robotických platforem</h1>
+                    <p class="lede">
+                        Platforma zaměřená na prediktivní bezpečnost v průmyslových areálech.
+                        Kombinuje GPS/BLE lokalizaci, geoanimační vizualizace a analýzy vzorců chování
+                        s důrazem na interakce Robot–Osoba–Vozidlo.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="login.html">Vstup do neveřejné části</a>
+                        <a class="button ghost" href="#dokumenty">Přehled dokumentace</a>
+                    </div>
+                    <div class="signal-grid">
+                        <div class="signal-card">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M10 32c0-12.15 9.85-22 22-22s22 9.85 22 22" />
+                                <path d="M18 32c0-7.73 6.27-14 14-14s14 6.27 14 14" />
+                                <path d="M26 32c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                                <circle cx="32" cy="32" r="3" />
+                            </svg>
+                            <div>
+                                <p class="label">Satelitní + BLE</p>
+                                <p class="muted">Hybridní lokalizace v indoor i outdoor prostředí</p>
+                            </div>
+                        </div>
+                        <div class="signal-card">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <rect x="22" y="22" width="20" height="20" rx="4" />
+                                <path d="M14 42c0-6 4-10 10-10h16c6 0 10 4 10 10" />
+                                <path d="M24 22v-6m16 6v-6" />
+                                <circle cx="20" cy="44" r="2" />
+                                <circle cx="44" cy="44" r="2" />
+                            </svg>
+                            <div>
+                                <p class="label">Robotické jednotky</p>
+                                <p class="muted">Sledování ghost robotů a autonomních patrol</p>
+                            </div>
+                        </div>
+                        <div class="signal-card">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M12 44c6-8 14-12 22-12s16 4 22 12" />
+                                <circle cx="32" cy="26" r="6" />
+                                <path d="M32 12v4m0 28v4m-14-22 3 3m22 22 3 3m-3-28 3-3m-22 22-3 3" />
+                            </svg>
+                            <div>
+                                <p class="label">Anomálie a interakce</p>
+                                <p class="muted">K-means++, Isolation Forest, DBSCAN, HMM, TDA, GNN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glow"></div>
+                    <div class="orb orb-large"></div>
+                    <div class="orb orb-small"></div>
+                    <div class="radar">
+                        <div class="ring"></div>
+                        <div class="ring delay"></div>
+                        <div class="ring slow"></div>
+                        <div class="blip one"></div>
+                        <div class="blip two"></div>
+                        <div class="blip three"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="metodika" class="section">
+                <div class="section-header">
+                    <p class="eyebrow">Metodika · V5_Příloha č. 2</p>
+                    <h2>Analytický rámec forenzní analýzy pohybu</h2>
+                    <p class="muted wide">
+                        Metodika definuje kompletní datový tok od sběru po reporting. Obsahuje validaci GPS,
+                        akcelerometrické předzpracování, derivaci kinematických/prostorových/temporálních metrik
+                        a knihovnu modelů pro anomálie a interakce.
+                    </p>
+                </div>
+                <div class="grid cards">
+                    <article class="card">
+                        <p class="label">Datové zdroje</p>
+                        <h3>GH5200, robotické jednotky, vozidlová telemetrie</h3>
+                        <p class="muted">
+                            Big Data pipeline pro osobní trackery, autonomní roboty a vozidla s validací signálu,
+                            čištěním šumu a sjednocením časové základny pro forenzní rekonstrukci.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <p class="label">Modely a algoritmy</p>
+                        <h3>K-means++, Isolation Forest, DBSCAN/ST-DBSCAN</h3>
+                        <p class="muted">
+                            Kombinujeme shlukování pro prostorové vzorce, izolaci anomálií pro outliery
+                            a sekvenční modely (HMM) pro sledování stavů v čase. TDA a GNN pro relace Robot–Osoba–Vozidlo.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <p class="label">Reporting</p>
+                        <h3>Grafy, heatmapy, eskalační workflow</h3>
+                        <p class="muted">
+                            Denní dávkové zpracování, eskalace při překročení prahů,
+                            vizualizace konfliktních zón a interakcí s možností exportu do forenzních zpráv.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="manual" class="section">
+                <div class="section-header">
+                    <p class="eyebrow">Uživatelský manuál · Příloha č. 1</p>
+                    <h2>Jak pracovat s geoanimační aplikací</h2>
+                    <p class="muted wide">
+                        Manuál popisuje provozní workflow: výběr areálu, navigaci v animačním plátně,
+                        tvorbu a potvrzování zón, přehrávání historie a práci s filtry.
+                    </p>
+                </div>
+                <ol class="steps">
+                    <li>
+                        <span class="step-number">1</span>
+                        <div>
+                            <h3>Primární obrazovka</h3>
+                            <p class="muted">
+                                Přepínání mezi areály ČEPRO a SSHR Bohuslavice. Škálovatelný panel pro desítky lokalit
+                                s drill-down do detailů.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <div>
+                            <h3>Animační plátno</h3>
+                            <p class="muted">
+                                Časová osa pro přehrávání pohybu, vrstvy pro GNSS robotů/osob, anomální události,
+                                heatmapy a kritické prvky infrastruktury.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <div>
+                            <h3>Variabilní zóny</h3>
+                            <p class="muted">
+                                V panelu Variabilní zóny zvolte počet rohů a zón, klikněte na <strong>Zahájit malování</strong>,
+                                kreslete uvnitř perimetru, potvrďte jednotlivé zóny a nakonec použijte
+                                <strong>Globální potvrzení zón</strong>.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <div>
+                            <h3>Interakce a export</h3>
+                            <p class="muted">
+                                Vyhodnocujte vzdálenosti, kolize a prioritní konfliktní zóny. Exportujte
+                                forenzní výstupy a reporty pro compliance a audit.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="strategie" class="section split">
+                <div>
+                    <p class="eyebrow">Obchodní strategie · Komerční užití</p>
+                    <h2>Sales metodika a odlišení od RTLS</h2>
+                    <p class="muted">
+                        Strategický dokument definuje akviziční funnel a value proposition forenzního monitoringu
+                        oproti real-time RTLS systémům. Platforma je sekundární analytický nástroj pro prediktivní bezpečnost.
+                    </p>
+                    <div class="pill-list">
+                        <span class="pill">Hybridní GPS/BLE lokalizace</span>
+                        <span class="pill">Geoanimační vizualizace + Unity</span>
+                        <span class="pill">Ghost Robot Tracking</span>
+                        <span class="pill">Predikce insider threats</span>
+                        <span class="pill">Customizace pro každý areál</span>
+                    </div>
+                </div>
+                <div class="stat-panel">
+                    <h3>Klíčové přínosy</h3>
+                    <ul>
+                        <li><strong>Proaktivní prevence</strong> – dlouhodobá behaviorální analýza místo reaktivních alertů.</li>
+                        <li><strong>Bezpečnostní metriky</strong> pro Robot–Osoba–Vozidlo a prioritizaci zásahů.</li>
+                        <li><strong>Modulární nabídka</strong> – data ingestion, vizualizace, analytika, reporting.</li>
+                        <li><strong>Kompatibilita</strong> s enterprise dohledovými platformami jako doplňková analytická vrstva.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="hodnoceni" class="section">
+                <div class="section-header">
+                    <p class="eyebrow">Hodnoticí zpráva · ČEPRO & SSHR 2023–2025</p>
+                    <h2>Pilotní provoz a výsledky</h2>
+                    <p class="muted wide">
+                        Závěrečná zpráva shrnuje tříletý pilot v areálech ČEPRO Nové Město u Kolína a SSHR Bohuslavice.
+                        Platforma se rozšířila o robotický modul, umožňuje forenzní analýzu až 12 měsíců zpětně
+                        a integruje kritické prvky infrastruktury do vizualizace.
+                    </p>
+                </div>
+                <div class="grid stats">
+                    <div class="stat">
+                        <p class="label">Interakce</p>
+                        <h3>Robot · Osoba · Vozidlo</h3>
+                        <p class="muted">Tripartitní model pro konfliktní zóny, rekonstrukci událostí a eskalaci.</p>
+                    </div>
+                    <div class="stat">
+                        <p class="label">Proces</p>
+                        <h3>Denní dávky + reporting</h3>
+                        <p class="muted">Validace signálu, generování analytických výstupů a eskalační protokol.</p>
+                    </div>
+                    <div class="stat">
+                        <p class="label">Vizuální podpora</p>
+                        <h3>Heatmapy a animační přehrávač</h3>
+                        <p class="muted">Forenzní pohled na pohyb v kontextu kritických prvků infrastruktury.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dokumenty" class="section section-muted">
+                <div class="section-header">
+                    <p class="eyebrow">Dokumentace</p>
+                    <h2>Rychlé shrnutí klíčových materiálů</h2>
+                    <p class="muted wide">
+                        Plné verze dokumentů lze přidat jako PDF/DOCX před nasazením. Níže je stručný přehled obsahu,
+                        aby bylo jasné, co návštěvník najde po stažení.
+                    </p>
+                </div>
+                <div class="grid docs">
+                    <article class="doc-card">
+                        <p class="label">Metodika</p>
+                        <h3>V5_Příloha č. 2_Metodika_forenzní_analýzy</h3>
+                        <p class="muted">
+                            Datové zdroje, validace GPS, odvozené metriky, modely K-means++, Isolation Forest,
+                            DBSCAN/ST-DBSCAN, HMM, TDA, GNN a reporting s eskalačním protokolem.
+                        </p>
+                        <p class="note">Plný dokument doplníme jako PDF/DOCX.</p>
+                    </article>
+                    <article class="doc-card">
+                        <p class="label">Uživatelský manuál</p>
+                        <h3>V5_příloha č.1_Uživatelský manuál</h3>
+                        <p class="muted">
+                            Navigace v aplikaci, práce s areály ČEPRO/SSHR, vrstvy dat, kreslení variabilních zón,
+                            potvrzování, přehrávání historie a export forenzních výstupů.
+                        </p>
+                        <p class="note">Připravíme PDF verzi pro stažení.</p>
+                    </article>
+                    <article class="doc-card">
+                        <p class="label">Obchodní strategie</p>
+                        <h3>V5_Obchodní strategie_komerční užití</h3>
+                        <p class="muted">
+                            Sales metodika, pozice vůči RTLS, hybridní lokalizace, geoanimační vizualizace,
+                            Ghost Robot Tracking a prioritizace hodnoty pro klienty.
+                        </p>
+                        <p class="note">Soubor bude k dispozici po nahrání.</p>
+                    </article>
+                    <article class="doc-card">
+                        <p class="label">Hodnoticí zpráva</p>
+                        <h3>Hodnotici_zprava_SSHR_CEPRO_2023-2025_v2</h3>
+                        <p class="muted">
+                            Tříletý pilot, integrace robotického modulu, schopnost analyzovat 12 měsíců zpětně,
+                            vizualizace kritických prvků a doporučení pro provoz.
+                        </p>
+                        <p class="note">Doplníme finální PDF/DOCX.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="neverte" class="section split">
+                <div>
+                    <p class="eyebrow">Neveřejná část</p>
+                    <h2>Přístup chráněný heslem</h2>
+                    <p class="muted">
+                        Vstup je chráněn heslem a slouží pro interní tým. Po ověření hesla získáte odkaz
+                        na archiv animační aplikace SSHR Bohuslavice.
+                    </p>
+                    <a class="button primary" href="login.html">Ověřit heslo</a>
+                </div>
+                <div class="stat-panel">
+                    <h3>Co získáte</h3>
+                    <ul>
+                        <li>Archiv <strong>SSHR_Bohuslavice.zip</strong> s animační aplikací.</li>
+                        <li>Pokyny k rozbalení a spuštění lokálně.</li>
+                        <li>Vizuální konzistenci s veřejnou částí webu.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div>
+                <p class="label">Forenzní geoanimace</p>
+                <p class="muted">Prediktivní bezpečnost pro průmyslové areály a kritickou infrastrukturu.</p>
+            </div>
+            <div class="footer-actions">
+                <a class="button ghost" href="#metodika">Metodika</a>
+                <a class="button ghost" href="#dokumenty">Dokumenty</a>
+                <a class="button primary" href="login.html">Neveřejná část</a>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
